@@ -10,16 +10,18 @@ yangshun:
     github: yangshun
     newsletter: https://www.greatfrontend.com
 
-slorber:
-  name: Sébastien Lorber
-  title: Docusaurus maintainer
-  url: https://sebastienlorber.com
-  image_url: https://github.com/slorber.png
+pradnyesh:
+  name: Pradnyesh Patil
+  title: Software Engineer
+  url: https://pradnyeshpatil.com
+  image_url: https://github.com/pradnyeshpatil.png
   page:
     # customize the url of the author page at /blog/authors/<permalink>
-    permalink: '/all-sebastien-lorber-articles'
+    permalink: '/all-pradnyesh-patil-articles'
   socials:
-    x: sebastienlorber
-    linkedin: sebastienlorber
-    github: slorber
+    x: pradnyeshpatil
+    linkedin: pradnyesh-patil-5b328b185
+    github: pradnyeshpatil
     newsletter: https://thisweekinreact.com
+  
+
