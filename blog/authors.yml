@@ -1,27 +1,7 @@
-yangshun:
-  name: Yangshun Tay
-  title: Ex-Meta Staff Engineer, Co-founder GreatFrontEnd
-  url: https://linkedin.com/in/yangshun
-  image_url: https://github.com/yangshun.png
-  page: true
-  socials:
-    x: yangshunz
-    linkedin: yangshun
-    github: yangshun
-    newsletter: https://www.greatfrontend.com
-
 pradnyesh:
   name: Pradnyesh Patil
-  title: Software Engineer
-  url: https://pradnyeshpatil.com
-  image_url: https://github.com/pradnyeshpatil.png
-  page:
-    # customize the url of the author page at /blog/authors/<permalink>
-    permalink: '/all-pradnyesh-patil-articles'
-  socials:
-    x: pradnyeshpatil
-    linkedin: pradnyesh-patil-5b328b185
-    github: pradnyeshpatil
-    newsletter: https://thisweekinreact.com
-  
-
+  title: Full stack developer.
+  url: https://github.com/pradnyeshpatil
+  image_url: https://avatars.githubusercontent.com/u/46282630?s=400&u=2ba684f13f0864d5aaccbd09719f0ed7c2283068&v=4
+  github: pradnyeshpatil
+  linkedin: https://www.linkedin.com/in/pradnyesh-patil-123456789
