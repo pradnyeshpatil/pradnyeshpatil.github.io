@@ -32,8 +32,8 @@ export default function HomepageFeatures() {
                 I share technical tutorials, blogs, and dev tools.
               </p>
               <div className={styles.linkRow}>
-                <a href="https://github.com/pradnyesh" target="_blank" rel="noreferrer" className={styles.socialButton}>GitHub</a>
-                <a href="https://www.linkedin.com/in/pradnyesh/" target="_blank" rel="noreferrer" className={styles.socialButton}>LinkedIn</a>
+                <a href="https://github.com/pradnyeshpatil" target="_blank" rel="noreferrer" className={styles.socialButton}>GitHub</a>
+                <a href="https://www.linkedin.com/in/pradnyeshpatil27/" target="_blank" rel="noreferrer" className={styles.socialButton}>LinkedIn</a>
                 <a href="/blog" className={styles.socialButton}>My Blog</a>
               </div>
             </div>
@@ -48,11 +48,6 @@ export default function HomepageFeatures() {
         <div className={styles.contentWrapper}>
           <h2 className={styles.sectionTitle}>Explore My Content</h2>
           <div className={styles.quickLinksGrid}>
-            <a href="/docs/golang/intro" className={styles.quickLinkCard}>
-              <div className={styles.cardIcon}>🚀</div>
-              <h3>Golang Tutorials</h3>
-              <p>Learn Go programming from basics to advanced concepts.</p>
-            </a>
             <a href="/docs/data-structures-and-algorithms/dsa-roadmap" className={styles.quickLinkCard}>
               <div className={styles.cardIcon}>💻</div>
               <h3>Data Structures & Algorithms</h3>

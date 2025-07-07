@@ -38,7 +38,7 @@ export default function About() {
             <h3>Connect with Me</h3>
             <div className={styles.socialLinks}>
               <a href="https://github.com/pradnyeshpatil" target="_blank" rel="noopener noreferrer">GitHub</a>
-              <a href="https://www.linkedin.com/in/pradnyesh-patil-5b328b185/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+              <a href="https://www.linkedin.com/in/pradnyeshpatil27/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
             </div>
           </div>
           {/* ✅ IMAGE ON RIGHT (ON DESKTOP) */}

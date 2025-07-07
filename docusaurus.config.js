@@ -120,7 +120,7 @@ const config = {
           items: [
             {
               label: 'LinkedIn',
-              href: 'https://www.linkedin.com/in/pradnyesh-patil-5b328b185/',
+              href: 'https://www.linkedin.com/in/pradnyeshpatil27/',
             },
             {
               label: 'Stack Overflow',
