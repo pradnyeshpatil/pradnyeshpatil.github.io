@@ -4,7 +4,7 @@
         <title>Pradnyesh Patil - Full Stack Developer Blog</title>
         <link>https://pradnyeshpatil.github.io/blog</link>
         <description>Pradnyesh Patil - Full Stack Developer Blog</description>
-        <lastBuildDate>Wed, 04 Oct 2023 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Tue, 04 Feb 2025 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
@@ -12,7 +12,7 @@
             <title><![CDATA[How to create and use Rake task in ruby and use it in the Rails?]]></title>
             <link>https://pradnyeshpatil.github.io/blog/how-to-create-rake-task</link>
             <guid>https://pradnyeshpatil.github.io/blog/how-to-create-rake-task</guid>
-            <pubDate>Wed, 04 Oct 2023 00:00:00 GMT</pubDate>
+            <pubDate>Tue, 04 Feb 2025 00:00:00 GMT</pubDate>
             <description><![CDATA[Sometimes, We need to have a task that can be executed at regular basic at some time. In ruby, we have a rake task to define and execute this task at any time. We can use rake tasks in Rails for various purposes.]]></description>
             <content:encoded><![CDATA[<p>Sometimes, We need to have a task that can be executed at regular basic at some time. In ruby, we have a rake task to define and execute this task at any time. We can use rake tasks in Rails for various purposes.</p>
 <p>Rake is inspired by Linux <a href="https://en.wikipedia.org/wiki/Make_(software)" target="_blank" rel="noopener noreferrer">make utility</a>. Its name comes from the <code>Ruby Make</code>. Rake is a task management utility that reads and executes the tasks defined in the ruby language in the 'Rakefile`. It was written by the late <a href="https://en.wikipedia.org/wiki/Jim_Weirich" target="_blank" rel="noopener noreferrer">Jim Weirich</a>.</p>
@@ -55,7 +55,7 @@ Please feel free to contact me on <a href="https://x.com/Shyampa09340219" target
             <title><![CDATA[Postgres users and their permission issue.]]></title>
             <link>https://pradnyeshpatil.github.io/blog/postgres-permission-denied</link>
             <guid>https://pradnyeshpatil.github.io/blog/postgres-permission-denied</guid>
-            <pubDate>Sun, 09 Apr 2023 00:00:00 GMT</pubDate>
+            <pubDate>Tue, 09 Apr 2024 00:00:00 GMT</pubDate>
             <description><![CDATA[Have you ever faced the following issue while fetching records from Postgres in the rails?]]></description>
             <content:encoded><![CDATA[<p>Have you ever faced the following issue while fetching records from Postgres in the rails?</p>
 <p><strong><code>ActiveRecord::StatementInvalid: PG::InsufficientPrivilege: ERROR:  permission denied for relation</code></strong></p>
@@ -93,7 +93,7 @@ If you still have a problem please feel free to contact me on <a href="mailto:pa
             <title><![CDATA[Do you know how helpful the const_get method is?]]></title>
             <link>https://pradnyeshpatil.github.io/blog/const-get-method-in-ruby</link>
             <guid>https://pradnyeshpatil.github.io/blog/const-get-method-in-ruby</guid>
-            <pubDate>Sat, 11 Feb 2023 00:00:00 GMT</pubDate>
+            <pubDate>Sun, 11 Feb 2024 00:00:00 GMT</pubDate>
             <description><![CDATA[First, we will understand how the const_get method works then I will explain how we can use it in different ways and what are the use cases.]]></description>
             <content:encoded><![CDATA[<p>First, we will understand how the const_get method works then I will explain how we can use it in different ways and what are the use cases.</p>
 <div class="language-ruby codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-ruby codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">module Vehicle</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">  class Car</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    WHEELS = 4</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">  end</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">end</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">puts Object.const_get 'Vehicle::Car::WHEELS'   # =&gt; 4</span><br></span></code></pre></div></div>
@@ -115,7 +115,7 @@ Please feel free to contact me on <a href="https://x.com/Shyampa09340219" target
             <title><![CDATA[Difference between puts, p, and print in ruby.]]></title>
             <link>https://pradnyeshpatil.github.io/blog/compare-puts-p-print-in-ruby</link>
             <guid>https://pradnyeshpatil.github.io/blog/compare-puts-p-print-in-ruby</guid>
-            <pubDate>Thu, 13 Oct 2022 00:00:00 GMT</pubDate>
+            <pubDate>Fri, 13 Oct 2023 00:00:00 GMT</pubDate>
             <description><![CDATA[Ruby is developer friendly language and it provides many ways to perform same task. For example for printing the output on the console we can use puts, prints and p. But multiple ways to do same task means more confusion for selecting correct way for our use case. In this blog we will discuss about difference between puts, print and p so that we can select correct method as per our use case.]]></description>
             <content:encoded><![CDATA[<p>Ruby is developer friendly language and it provides many ways to perform same task. For example for printing the output on the console we can use puts, prints and p. But multiple ways to do same task means more confusion for selecting correct way for our use case. In this blog we will discuss about difference between puts, print and p so that we can select correct method as per our use case.</p>
 <h4 class="anchor anchorWithStickyNavbar_LWe7" id="lets-start-with-hello-world-using-all-of-this">Let's start with <code>hello world</code> using all of this.<a href="https://pradnyeshpatil.github.io/blog/compare-puts-p-print-in-ruby#lets-start-with-hello-world-using-all-of-this" class="hash-link" aria-label="Direct link to lets-start-with-hello-world-using-all-of-this" title="Direct link to lets-start-with-hello-world-using-all-of-this">​</a></h4>
@@ -169,7 +169,7 @@ Please feel free to contact me on <a href="https://x.com/Shyampa09340219" target
             <title><![CDATA[Extend, Merge methods in the Javascript.]]></title>
             <link>https://pradnyeshpatil.github.io/blog/how-to-merge-objects-in-javascript</link>
             <guid>https://pradnyeshpatil.github.io/blog/how-to-merge-objects-in-javascript</guid>
-            <pubDate>Wed, 24 Aug 2022 00:00:00 GMT</pubDate>
+            <pubDate>Thu, 24 Aug 2023 00:00:00 GMT</pubDate>
             <description><![CDATA[Yesterday, I was working on an issue in which database value for particular object attribute was correct but on UI it was showing the wrong value. I dig into the front-end Javascript code and I found that bug occurred while merging the two objects in Javascript. first, we will discuss how to merge two objects then I will explain what we should care about while merging two objects.]]></description>
             <content:encoded><![CDATA[<p>Yesterday, I was working on an issue in which database value for particular object attribute was correct but on UI it was showing the wrong value. I dig into the front-end Javascript code and I found that bug occurred while merging the two objects in Javascript. first, we will discuss how to merge two objects then I will explain what we should care about while merging two objects.</p>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="how-to-merge-objects">How to merge objects?<a href="https://pradnyeshpatil.github.io/blog/how-to-merge-objects-in-javascript#how-to-merge-objects" class="hash-link" aria-label="Direct link to How to merge objects?" title="Direct link to How to merge objects?">​</a></h2>
@@ -196,7 +196,7 @@ Please feel free to contact me on <a href="https://x.com/Shyampa09340219" target
             <title><![CDATA[How to use a Singleton method in the rails.]]></title>
             <link>https://pradnyeshpatil.github.io/blog/singleton-method-in-the-ruby</link>
             <guid>https://pradnyeshpatil.github.io/blog/singleton-method-in-the-ruby</guid>
-            <pubDate>Wed, 10 Aug 2022 00:00:00 GMT</pubDate>
+            <pubDate>Thu, 10 Aug 2023 00:00:00 GMT</pubDate>
             <description><![CDATA[Today I have been going through Ruby Conference videos and Singleton method and metaclass in ruby was one of the talk discussed there So, I thought to write a blog about it.]]></description>
             <content:encoded><![CDATA[<p>Today I have been going through Ruby Conference videos and Singleton method and metaclass in ruby was one of the talk discussed there So, I thought to write a blog about it.</p>
 <p>In ruby, we create the class and class has many methods written into it. When we create an object of the class we can access those methods using that object. So, the question raise in my mind was as follows.</p>
@@ -217,7 +217,7 @@ Please feel free to contact me on <a href="https://x.com/Shyampa09340219" target
             <title><![CDATA[Scope in rails.]]></title>
             <link>https://pradnyeshpatil.github.io/blog/scope-in-rails</link>
             <guid>https://pradnyeshpatil.github.io/blog/scope-in-rails</guid>
-            <pubDate>Mon, 13 Jun 2022 00:00:00 GMT</pubDate>
+            <pubDate>Tue, 13 Jun 2023 00:00:00 GMT</pubDate>
             <description><![CDATA[Rails follow the DRY principle of software development and that is 'Don't Repeat Yourself'.]]></description>
             <content:encoded><![CDATA[<p>Rails follow the DRY principle of software development and that is 'Don't Repeat Yourself'.
 Scopes are great to keep our code DRY and well organized. It's just a set of pre-defined SQL queries that we can use to write complex queries.</p>
@@ -250,7 +250,7 @@ Scopes are great to keep our code DRY and well organized. It's just a set of pre
             <title><![CDATA[Relational database.]]></title>
             <link>https://pradnyeshpatil.github.io/blog/relational-database</link>
             <guid>https://pradnyeshpatil.github.io/blog/relational-database</guid>
-            <pubDate>Mon, 16 May 2022 00:00:00 GMT</pubDate>
+            <pubDate>Tue, 16 May 2023 00:00:00 GMT</pubDate>
             <description><![CDATA[In the internet era, every organization is storing large data and it is difficult to maintain this much data. There are different databases available but it is very difficult to select the best suitable for our requirement. Mainly databases are classified into Relational database and Non-relational database.]]></description>
             <content:encoded><![CDATA[<p>In the internet era, every organization is storing large data and it is difficult to maintain this much data. There are different databases available but it is very difficult to select the best suitable for our requirement. Mainly databases are classified into Relational database and Non-relational database.</p>
 <p><strong>Relational database:</strong> It is also called SQL(Structured Query Language) database and it is a set of data organized by tables, records and columns.</p>
@@ -272,7 +272,7 @@ Scopes are great to keep our code DRY and well organized. It's just a set of pre
             <title><![CDATA[Eager loading and N+1 query in rails.]]></title>
             <link>https://pradnyeshpatil.github.io/blog/eager-loading-and-N-plus-1-query</link>
             <guid>https://pradnyeshpatil.github.io/blog/eager-loading-and-N-plus-1-query</guid>
-            <pubDate>Tue, 10 May 2022 00:00:00 GMT</pubDate>
+            <pubDate>Wed, 10 May 2023 00:00:00 GMT</pubDate>
             <description><![CDATA[Sometimes, the implementation of an algorithm can make performance worst. Then it does not matter whether it has used the faster programming language like C or slower like Ruby. So we should implement the algorithms properly. Same while dealing with the database we should use proper queries so that the performance should not affect.]]></description>
             <content:encoded><![CDATA[<p>Sometimes, the implementation of an algorithm can make performance worst. Then it does not matter whether it has used the faster programming language like C or slower like Ruby. So we should implement the algorithms properly. Same while dealing with the database we should use proper queries so that the performance should not affect.</p>
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="lets-observe-an-example">Let's observe an example.<a href="https://pradnyeshpatil.github.io/blog/eager-loading-and-N-plus-1-query#lets-observe-an-example" class="hash-link" aria-label="Direct link to Let's observe an example." title="Direct link to Let's observe an example.">​</a></h3>
@@ -301,7 +301,7 @@ Scopes are great to keep our code DRY and well organized. It's just a set of pre
             <title><![CDATA[First Blog Post]]></title>
             <link>https://pradnyeshpatil.github.io/blog/first-blog-post</link>
             <guid>https://pradnyeshpatil.github.io/blog/first-blog-post</guid>
-            <pubDate>Tue, 04 Jan 2022 00:00:00 GMT</pubDate>
+            <pubDate>Wed, 04 Jan 2023 00:00:00 GMT</pubDate>
             <description><![CDATA[This is my first post here at my personal portfolio, how exciting!!]]></description>
             <content:encoded><![CDATA[<p>This is my first post here at my personal portfolio, how exciting!!</p>]]></content:encoded>
         </item>
