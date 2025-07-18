@@ -2,11 +2,102 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://pradnyeshpatil.github.io/blog</id>
     <title>Pradnyesh Patil - Full Stack Developer Blog</title>
-    <updated>2025-02-04T00:00:00.000Z</updated>
+    <updated>2025-07-19T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://pradnyeshpatil.github.io/blog"/>
     <subtitle>Pradnyesh Patil - Full Stack Developer Blog</subtitle>
     <icon>https://pradnyeshpatil.github.io/img/favicon.ico</icon>
+    <entry>
+        <title type="html"><![CDATA[📬 From Path to Action - The Magic of Rails Routing]]></title>
+        <id>https://pradnyeshpatil.github.io/blog/how-rails-routes-work</id>
+        <link href="https://pradnyeshpatil.github.io/blog/how-rails-routes-work"/>
+        <updated>2025-07-19T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Have you ever wondered how a request like /users/5 magically ends up calling UsersController#show in a Rails application?]]></summary>
+        <content type="html"><![CDATA[<p>Have you ever wondered <strong>how a request like <code>/users/5</code> magically ends up calling <code>UsersController#show</code></strong> in a Rails application?</p>
+<p>Well, it's not magic — it's <strong>Action Dispatch</strong> behind the scenes doing the heavy lifting!</p>
+<p>In this blog, let’s break down how Rails handles routing, from the moment a request hits your server, to the moment your controller action is executed.</p>
+<h1>1. What happens when you hit a URL?</h1>
+<p>Let’s say you open your browser and type:</p>
+<p><code>https://example.com/users/5</code></p>
+<p>This sends an <strong>HTTP GET request</strong> to your Rails server. From there, several things happen:</p>
+<ol>
+<li><strong>Rack</strong> receives the request.</li>
+<li><strong>Action Dispatch</strong> takes over and figures out which controller and action to run.</li>
+<li>The matched controller’s action is executed, and a response is sent back.</li>
+</ol>
+<p>But let’s go step by step.</p>
+<h1>2. Rails is built on Rack</h1>
+<p>Rails is a <strong>Rack-based</strong> framework.</p>
+<p>Rack is a simple Ruby interface between web servers and Ruby web applications. Every Rails app starts with a <strong><code>config.ru</code></strong> file, which tells Rack how to boot your app:</p>
+<div class="language-ruby codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-ruby codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">require_relative 'config/environment'</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">run Rails.application</span><br></span></code></pre></div></div>
+<p>So when a request comes in, Rack calls Rails.application.call(env) and hands over the request.</p>
+<h1>3. Enter Action Dispatch: Routing the Request</h1>
+<p>Now, Rails.application is an instance of the class Rails::Application, and it includes a middleware stack — one of which is <strong>ActionDispatch::Routing::RouteSet</strong>.</p>
+<p>This is where routing magic begins.</p>
+<p>Your config/routes.rb file defines all available routes.</p>
+<p><strong>ActionDispatch::Routing::RouteSet</strong> uses this definition to match the incoming path (/users/5) and HTTP method (GET).</p>
+<p>Once a match is found, it maps it to something like:</p>
+<div class="language-ruby codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-ruby codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">{ controller: "users", action: "show", id: "5" }</span><br></span></code></pre></div></div>
+<p>This is called route recognition.</p>
+<h1>4. Dispatching to the Right Controller</h1>
+<p>After the route is recognized, Rails needs to dispatch the request to the correct controller and action.</p>
+<p>This is handled by <strong>ActionDispatch::Routing::RouteSet::Dispatcher</strong>.</p>
+<p>Here’s what happens:</p>
+<ul>
+<li>It takes the controller name (e.g., <code>"users"</code>).</li>
+<li>It turns that into a constant (<code>UsersController</code>).</li>
+<li>It creates an instance of that controller.</li>
+<li>It calls the <code>show</code> action on it with the provided <code>id</code> param.</li>
+</ul>
+<p>So, this line in <code>routes.rb</code>:</p>
+<div class="language-ruby codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-ruby codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">get '/users/:id', to: 'users#show'</span><br></span></code></pre></div></div>
+<p>Turns into:</p>
+<div class="language-ruby codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-ruby codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">UsersController.new.show(params)</span><br></span></code></pre></div></div>
+<p>(Of course, in reality, there’s more middleware, filters, and view rendering, but conceptually this is what happens.)</p>
+<h1>5. Params and URL Helpers</h1>
+<p>During routing, Rails also extracts route parameters (like <!-- -->:id<!-- -->) and puts them into the params hash, which your controller can access easily.</p>
+<p>And thanks to route definitions, Rails can <strong>generate</strong> URLs using route helpers:</p>
+<div class="language-ruby codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-ruby codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">user_path(5)  # =&gt; "/users/5"</span><br></span></code></pre></div></div>
+<p>This works because of Named Routes.</p>
+<h1>6. Middleware Stack: The Unsung Heroes</h1>
+<p>Before your controller is even hit, the request passes through a stack of middleware defined in:</p>
+<div class="language-ruby codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-ruby codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">Rails.application.middleware</span><br></span></code></pre></div></div>
+<p>These include things like:</p>
+<ul>
+<li>Logging</li>
+<li>Caching</li>
+<li>Session handling</li>
+<li>Cookies</li>
+<li>Parameter parsing</li>
+</ul>
+<p>Once all these layers are done, the request finally reaches your controller.</p>
+<h1>Summary: Rails Routing in a Nutshell</h1>
+<p>When you hit <code>/users/5</code>, this happens behind the scenes:</p>
+<ol>
+<li><strong>Rack</strong> receives the request.</li>
+<li>Rails passes it to <strong>Action Dispatch</strong>.</li>
+<li><code>routes.rb</code> matches the URL to a controller and action.</li>
+<li>Rails creates a controller instance.</li>
+<li>The action (<code>show</code>) is executed.</li>
+<li>Response is generated and returned.</li>
+</ol>
+<h1>Bonus Tip: View All Routes in Your App</h1>
+<p>You can run this command to see all routes in your Rails app:</p>
+<div class="language-ruby codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-ruby codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">$ rails routes</span><br></span></code></pre></div></div>
+<p>Or use grep to search:</p>
+<div class="language-ruby codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-ruby codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">$ rails routes | grep users</span><br></span></code></pre></div></div>
+<h1>Conclusion</h1>
+<p>I hope this helped you understand the beautiful flow of how Rails handles routing using Action Dispatch. If you’re curious, try exploring the source code inside the actionpack gem — it’s super well organized!</p>
+<p>Let’s connect on <a href="https://www.linkedin.com/in/pradnyeshpatil27/" target="_blank" rel="noopener noreferrer">LinkedIn</a> if you have any questions or want to chat more about Ruby on Rails.</p>]]></content>
+        <author>
+            <name>Pradnyesh Patil</name>
+            <uri>https://github.com/pradnyeshpatil</uri>
+        </author>
+        <category label="Rails" term="Rails"/>
+        <category label="routing" term="routing"/>
+        <category label="action-dispatch" term="action-dispatch"/>
+        <category label="controller" term="controller"/>
+    </entry>
     <entry>
         <title type="html"><![CDATA[How to create and use Rake task in ruby and use it in the Rails?]]></title>
         <id>https://pradnyeshpatil.github.io/blog/how-to-create-rake-task</id>
