@@ -13,8 +13,9 @@
             <link>https://pradnyeshpatil.github.io/blog/how-rails-routes-work</link>
             <guid>https://pradnyeshpatil.github.io/blog/how-rails-routes-work</guid>
             <pubDate>Sat, 19 Jul 2025 00:00:00 GMT</pubDate>
-            <description><![CDATA[Have you ever wondered how a request like /users/5 magically ends up calling UsersController#show in a Rails application?]]></description>
-            <content:encoded><![CDATA[<p>Have you ever wondered <strong>how a request like <code>/users/5</code> magically ends up calling <code>UsersController#show</code></strong> in a Rails application?</p>
+            <description><![CDATA[While working on one of my project, I noticed that visiting /users/profile/edit was incorrectly hitting the users#show action instead of my custom users#edit_profile. The problem? I had defined get '/users/id. Rails doesn't validate the full path unless the pattern demands it.]]></description>
+            <content:encoded><![CDATA[<p>While working on one of my project, I noticed that visiting <code>/users/profile/edit</code> was incorrectly hitting the <code>users#show</code> action instead of my custom <code>users#edit_profile</code>. The problem? I had defined get <code>'/users/:id'</code> before the more specific route. Since Rails matches routes top-down, it treated <code>"profile"</code> as the <code>:id</code>. Rails doesn't validate the full path unless the pattern demands it.</p>
+<p>This small routing mistake led me to explore how Rails internally matches and resolves routes.</p>
 <p>Well, it's not magic — it's <strong>Action Dispatch</strong> behind the scenes doing the heavy lifting!</p>
 <p>In this blog, let’s break down how Rails handles routing, from the moment a request hits your server, to the moment your controller action is executed.</p>
 <h1>1. What happens when you hit a URL?</h1>
